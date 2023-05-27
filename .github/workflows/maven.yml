@@ -36,4 +36,4 @@ jobs:
     - name: Execute Jar Backend
       run: sudo -E java -jar /home/ubuntu/actions-runner/_work/shopmeApp/shopmeApp/ShopmeWebParent/ShopmeBackEnd/target/ShopmeBackEnd-0.0.1-SNAPSHOT.jar &
     - name: Execute Jar FrontEnd
-      run: sudo -E java -jar /home/ubuntu//actions-runner/_work/shopmeApp/shopmeApp/ShopmeWebParent/ShopmeFrontEnd/target/ShopmeFrontEnd-0.0.1-SNAPSHOT.jar &
+      run: sudo -E java -jar /home/ubuntu/actions-runner/_work/shopmeApp/shopmeApp/ShopmeWebParent/ShopmeFrontEnd/target/ShopmeFrontEnd-0.0.1-SNAPSHOT.jar &
