@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: page_head('Banner - Shopme Admin', 'none')" />
+<body>
+<div class="container-fluid">
+	<div th:replace="navigation :: menu"></div>
+	<div>
+		<h2>Manage Banners</h2>	
+		
+<!-- 		<a th:href="@{/brands/new}" class="fas fa-folder-plus fa-2x icon-dark mr-2"></a>
+ -->	</div>
+		
+<!-- 	<div th:replace="fragments :: search_form_and_message" />
+ -->	
+	<div class="full-details">
+		<table class="table table-bordered table-striped table-hover table-responsive-xl">
+			<thead class="thead-dark">
+				<tr>
+					
+					<th >Banner ID</th>
+						
+                    <th>title</th>
+                     <th>Description</th>
+					<th>Enabled</th>
+				</tr>
+											
+			</thead>
+			<tbody>
+				<tr th:each="banner : ${listBanner}">
+					<td >[[${banner.id}]]</td>
+
+					<td>[[${banner.title}]]</td>
+					<td>[[${banner.description}]]</td>
+					<th:block sec:authorize="hasAnyAuthority('Admin', 'Editor')">
+					<td>
+						<div th:replace="fragments :: status(${banner.enabled}, 'banner', '/banners/' + ${banner.id})" />
+ 					</td>
+					</th:block>
+					
+				
+				</tr> 
+			</tbody>
+		</table>
+	</div>
+	
+	
+	
+<!-- 	<div th:replace="fragments :: pagination('brands')"></div>
+ -->	
+	<div th:replace="modal_fragments :: confirm_modal" />
+	
+	<div th:replace="fragments :: footer"></div>
+	
+</div>
+<script th:src="@{/js/common_list.js}"></script>
+<script type="text/javascript">
+	moduleURL = "[[@{/banners}]]";
+
+	$(document).ready(function() {
+		$(".link-delete").on("click", function(e) {
+			e.preventDefault();
+			showDeleteConfirmModal($(this), 'banner');
+		});
+	});
+</script>
+</body>
+</html>
+
+
+
+
