@@ -253,14 +253,14 @@
 <!--                            <a class="nav-link text-dark" th:href="@{/articles}">Articles</a>-->
 <!--                        </li>-->
 
-<!--                        <li class="nav-item">-->
-<!--                            <a class="nav-link text-dark" th:href="@{/menus}">Menus</a>-->
-<!--                        </li>-->
-						<th:block sec:authorize="hasAuthority('Editor')">
+                        <li class="nav-item">
+                           <a class="nav-link text-dark" th:href="@{/menus}">Menus</a>
+                       </li>
+
 							<li class="nav-item">
 								<a class="nav-link text-dark" th:href="@{/sections}">Home Page</a>
 							</li>
-						</th:block>
+
 					</th:block>
 
 					<li class="nav-item dropdown" sec:authorize="hasAuthority('Admin')">
